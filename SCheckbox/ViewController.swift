@@ -10,9 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var check: SCheckBox!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.check.color(UIColor.grayColor(), forState: UIControlState.Normal)
+        self.check.textLabel.text = "this is a checkbox"
+        self.check.addTarget(self, action: "tapCheck:", forControlEvents: UIControlEvents.ValueChanged)
+    }
+    
+    func tapCheck(checkBox: SCheckBox!){
+        println("\(checkBox.checked)")
     }
 
     override func didReceiveMemoryWarning() {

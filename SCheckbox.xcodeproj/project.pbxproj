@@ -13,6 +13,7 @@
 		B3A6B69419D4D854001B879E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3A6B69319D4D854001B879E /* Images.xcassets */; };
 		B3A6B69719D4D854001B879E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3A6B69519D4D854001B879E /* LaunchScreen.xib */; };
 		B3A6B6A319D4D854001B879E /* SCheckboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A6B6A219D4D854001B879E /* SCheckboxTests.swift */; };
+		B3A6B6AD19D4D8E8001B879E /* SCheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A6B6AC19D4D8E8001B879E /* SCheckBox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		B3A6B69C19D4D854001B879E /* SCheckboxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SCheckboxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3A6B6A119D4D854001B879E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3A6B6A219D4D854001B879E /* SCheckboxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCheckboxTests.swift; sourceTree = "<group>"; };
+		B3A6B6AC19D4D8E8001B879E /* SCheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCheckBox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		B3A6B68919D4D853001B879E /* SCheckbox */ = {
 			isa = PBXGroup;
 			children = (
+				B3A6B6AE19D4D8F1001B879E /* SCheckbox */,
 				B3A6B68C19D4D854001B879E /* AppDelegate.swift */,
 				B3A6B68E19D4D854001B879E /* ViewController.swift */,
 				B3A6B69019D4D854001B879E /* Main.storyboard */,
@@ -110,6 +113,14 @@
 				B3A6B6A119D4D854001B879E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B3A6B6AE19D4D8F1001B879E /* SCheckbox */ = {
+			isa = PBXGroup;
+			children = (
+				B3A6B6AC19D4D8E8001B879E /* SCheckBox.swift */,
+			);
+			name = SCheckbox;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +225,7 @@
 			files = (
 				B3A6B68F19D4D854001B879E /* ViewController.swift in Sources */,
 				B3A6B68D19D4D854001B879E /* AppDelegate.swift in Sources */,
+				B3A6B6AD19D4D8E8001B879E /* SCheckBox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
