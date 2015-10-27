@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     }
     
     func tapCheck(checkBox: SCheckBox!){
-        println("\(checkBox.checked)")
+        print("\(checkBox.checked)")
     }
 
     override func didReceiveMemoryWarning() {

@@ -36,7 +36,7 @@ class SCheckBox: UIControl {
         
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
@@ -56,13 +56,13 @@ class SCheckBox: UIControl {
     }
     
     func color(color:UIColor, forState state:UIControlState) {
-        self.colors[state.toRaw()] = color
+        self.colors[state.rawValue] = color
         self.changeColorForState(self.state)
     }
     
     func backgroundColor(color:UIColor, forState state:UIControlState) {
         
-        self.backgroundColors[state.toRaw()] = color
+        self.backgroundColors[state.rawValue] = color
         self.changeBackgroundColorForState(self.state)
     }
     
@@ -73,7 +73,7 @@ class SCheckBox: UIControl {
     }
     
     
-    override func observeValueForKeyPath(keyPath: String!, ofObject object: AnyObject!, change: [NSObject : AnyObject]!, context: UnsafeMutablePointer<Void>) {
+    override func observeValueForKeyPath(keyPath: String!, ofObject object: AnyObject!, change: [String : AnyObject]!, context: UnsafeMutablePointer<Void>) {
         switch keyPath {
             case "enabled", "selected", "highlighted":
             self.changeColorForState(self.state)
@@ -85,7 +85,7 @@ class SCheckBox: UIControl {
     
     private func changeColorForState(state: UIControlState) {
         
-        if let color = self.colors[state.toRaw()] {
+        if let color = self.colors[state.rawValue] {
             self.checkboxColor = color
             self.textLabel.textColor = color
         }
@@ -93,7 +93,7 @@ class SCheckBox: UIControl {
     
     private func changeBackgroundColorForState(state: UIControlState) {
         
-        if let color = self.backgroundColors[state.toRaw()] {
+        if let color = self.backgroundColors[state.rawValue] {
             self.backgroundColor = color
         }
     }
@@ -128,15 +128,15 @@ class SCheckBox: UIControl {
         super.layoutSubviews()
         
         let textLabelOriginX = self.checkboxSideLength + 5.0
-        let textLabelMaxSize = CGSizeMake(CGRectGetWidth(self.bounds) - textLabelOriginX, CGRectGetHeight(self.bounds))
+        _ = CGSizeMake(CGRectGetWidth(self.bounds) - textLabelOriginX, CGRectGetHeight(self.bounds))
         let myNSString: NSString = NSString(string: self.textLabel.text!)
-        var textLabelSize:CGSize =  myNSString.sizeWithAttributes([NSFontAttributeName: self.textLabel.font])
+        let textLabelSize:CGSize =  myNSString.sizeWithAttributes([NSFontAttributeName: self.textLabel.font])
         self.textLabel.frame = CGRectIntegral(CGRectMake(textLabelOriginX, (CGRectGetHeight(self.bounds) - textLabelSize.height) / 2.0, textLabelSize.width, textLabelSize.height))
         
     }
     
-    override func endTrackingWithTouch(touch: UITouch, withEvent event: UIEvent) {
-        let location = touch.locationInView(self)
+    override func endTrackingWithTouch(touch: UITouch?, withEvent event: UIEvent?) {
+        let location = touch!.locationInView(self)
         if CGRectContainsPoint(self.bounds, location) {
             self.checked = !self.checked
         }
