@@ -3,7 +3,7 @@ SCheckbox
 
 SCheckbox is a easy control for use in your app.
 
-Who to use
+How to use
 =========
 
 Put in you XIB or storyboard a UIView with class SCheckbox, connect a IBOutlet and configure.
